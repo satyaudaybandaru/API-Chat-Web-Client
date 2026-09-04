@@ -263,7 +263,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
 
   return (
     <div
-      className="flex flex-col h-full bg-background relative"
+      className="flex flex-col h-full bg-background relative overflow-hidden"
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
@@ -279,7 +279,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
       )}
 
       {/* Header */}
-      <div className="flex justify-between items-center px-6 py-4 border-b bg-card sm:flex hidden">
+      <div className="flex justify-between items-center px-6 py-4 border-b bg-card sm:flex hidden shrink-0">
         <div className="flex flex-col gap-1">
           <h1 className="text-3xl font-extrabold flex items-baseline gap-2 tracking-tight caacupe-one-regular">
             <span className="text-slate-800 dark:text-slate-200 drop-shadow-sm pb-1">
@@ -303,7 +303,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
       </div>
 
       {/* Messages Area */}
-      <ScrollArea className="flex-1 p-4 sm:p-6" ref={scrollRef}>
+      <ScrollArea className="flex-1 min-h-0 p-4 sm:p-6" ref={scrollRef}>
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-[50vh] text-center gap-4">
             <div className="w-24 h-24 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 shadow-sm border border-slate-200 dark:border-slate-700">
@@ -435,7 +435,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
       </ScrollArea>
 
       {/* Input Area */}
-      <div className="p-3 sm:p-4 bg-background border-t">
+      <div className="p-3 sm:p-4 bg-background border-t shrink-0">
         <div className="max-w-4xl mx-auto flex flex-col gap-2">
 
           {/* Pending Image Previews */}

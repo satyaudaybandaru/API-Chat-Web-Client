@@ -46,7 +46,7 @@ function AppContent() {
       ) : (
         <div className="flex-1 h-full flex flex-col">
           {/* Mobile Header for Sidebar Toggle */}
-          <div className="sm:hidden flex items-center px-4 py-3 border-b bg-card">
+          <div className="sm:hidden flex items-center px-4 py-3 border-b bg-card shrink-0">
             <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(true)} className="-ml-2 mr-2">
               <Menu size={20} />
             </Button>
