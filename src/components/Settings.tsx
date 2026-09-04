@@ -78,7 +78,7 @@ export function Settings() {
 
   return (
     <div className="flex flex-col gap-8 max-w-2xl mx-auto w-full p-6">
-      <div className="flex justify-between items-center border-b pb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b pb-4 gap-4">
         <div>
           <h2 className="text-4xl font-extrabold tracking-tight caacupe-one-regular mb-2 text-slate-800 dark:text-slate-200 pb-1 drop-shadow-sm">API Chat Web Client</h2>
           <p className="text-sm text-muted-foreground mt-2 max-w-lg leading-relaxed">
@@ -183,7 +183,7 @@ export function Settings() {
           <p className="text-xs text-muted-foreground">Sent as the first message with role "system". Leave blank to omit.</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 border-t pt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t pt-6">
           <div className="grid gap-2">
             <Label>Temperature: {parseFloat(temperature || "0").toFixed(2)}</Label>
             <Input
