@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# API Chat Web Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, highly responsive, privacy-focused local web client for interacting with AI models via API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **100% Local & Private**: All API keys, chat history, and configuration are stored exclusively in your browser's `localStorage`. No backend server, no data uploaded.
+- **Universal Provider Support**: Connect to any OpenAI-compatible API endpoint.
+- **Localhost APIs**: Seamlessly works with local models hosted via Ollama, LM Studio, and other local servers.
+- **Multi-Modal Support**: Drag and drop images directly into the chat for vision-capable models (e.g., GPT-4o, Claude 3.5 Sonnet). The app automatically handles compatibility checks and warnings.
+- **Image Generation**: Fully supports image generation models (like DALL-E 3) with dedicated UI formatting and rendering.
+- **Modern UI/UX**: Built with React, Tailwind CSS v4, and custom Shadcn UI components. Features a sleek, responsive design with elegant typography, smooth interactions, and a beautiful custom SVG favicon.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19 + Vite
+- **Styling**: Tailwind CSS v4 + Shadcn UI
+- **Icons**: Lucide React
+- **Fonts**: Outfit (Global UI), Caacupe One (Branding)
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. Navigate to the project directory:
+   ```bash
+   cd Custom-Web-Client
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the application in your browser and enter your API configuration in the Settings panel (via the gear icon) to start chatting!
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+But you don't have to setup on your own!!! that's the main motive, check out the deployed link and use it right now in your browser!!!
