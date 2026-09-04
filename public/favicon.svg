@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="main-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" /> <!-- Blue 600 -->
+      <stop offset="100%" stop-color="#7c3aed" /> <!-- Violet 600 -->
+    </linearGradient>
+    <linearGradient id="spark-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" /> <!-- Cyan 500 -->
+      <stop offset="100%" stop-color="#3b82f6" /> <!-- Blue 500 -->
+    </linearGradient>
+  </defs>
+
+  <!-- Modern squircle background -->
+  <rect x="32" y="32" width="448" height="448" rx="120" fill="url(#main-grad)" />
+
+  <!-- Dynamic AI spark / star -->
+  <path d="M256 112 C 256 216 216 256 112 256 C 216 256 256 296 256 400 C 256 296 296 256 400 256 C 296 256 256 216 256 112 Z" fill="#ffffff" opacity="0.95" />
+  
+  <!-- Center glowing core -->
+  <circle cx="256" cy="256" r="36" fill="url(#spark-grad)" />
+</svg>
