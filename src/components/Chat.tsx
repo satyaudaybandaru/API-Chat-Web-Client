@@ -32,7 +32,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
 
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages, isStreaming, isGenerating]);
 
@@ -303,7 +303,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
       </div>
 
       {/* Messages Area */}
-      <ScrollArea className="flex-1 min-h-0 p-4 sm:p-6" ref={scrollRef}>
+      <ScrollArea className="flex-1 min-h-0 p-4 sm:p-6">
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-[50vh] text-center gap-4">
             <div className="w-24 h-24 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 shadow-sm border border-slate-200 dark:border-slate-700">
@@ -430,6 +430,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
                 </div>
               </div>
             )}
+            <div ref={scrollRef} className="h-px w-full shrink-0" />
           </div>
         )}
       </ScrollArea>
