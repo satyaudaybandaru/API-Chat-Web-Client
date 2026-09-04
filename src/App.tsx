@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { SettingsProvider } from "./context/SettingsContext";
+import { SettingsProvider, useSettings } from "./context/SettingsContext";
 import { ConversationsProvider } from "./context/ConversationsContext";
 import { Settings } from "./components/Settings";
 import { Chat } from "./components/Chat";
 import { Sidebar } from "./components/Sidebar";
-import { Menu } from "lucide-react";
+import { Menu, Settings as SettingsIcon, AlertCircle } from "lucide-react";
 import { Button } from "./components/ui/button";
 
 function AppContent() {
+  const { isConfigured } = useSettings();
   const [showSettings, setShowSettings] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="h-screen w-full bg-background text-foreground flex overflow-hidden font-sans">
+    <div className="h-[100dvh] w-full bg-background text-foreground flex overflow-hidden font-sans">
       {/* Sidebar for Desktop */}
       <div className="hidden sm:block">
         <Sidebar />
@@ -46,11 +47,20 @@ function AppContent() {
       ) : (
         <div className="flex-1 h-full flex flex-col">
           {/* Mobile Header for Sidebar Toggle */}
-          <div className="sm:hidden flex items-center px-4 py-3 border-b bg-card shrink-0">
-            <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(true)} className="-ml-2 mr-2">
+          <div className="sm:hidden flex items-center px-4 py-3 border-b bg-card shrink-0 gap-2">
+            <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(true)} className="-ml-2">
               <Menu size={20} />
             </Button>
-            <h1 className="text-lg font-bold text-primary flex-1">Chat</h1>
+            <h1 className="text-lg font-bold text-primary flex-1 truncate">Chat</h1>
+            {!isConfigured && (
+              <div className="flex items-center gap-1.5 px-2 py-1 bg-destructive/10 text-destructive border border-destructive/20 rounded-full text-[10px] font-bold shadow-sm shrink-0">
+                <AlertCircle size={12} />
+                <span className="hidden min-[380px]:inline">Not Configured</span>
+              </div>
+            )}
+            <Button variant="outline" size="icon" className="w-8 h-8 shrink-0" onClick={() => setShowSettings(true)}>
+              <SettingsIcon className="w-4 h-4 text-muted-foreground" />
+            </Button>
           </div>
           <div className="flex-1 overflow-hidden relative">
             <Chat onOpenSettings={() => setShowSettings(true)} />
