@@ -125,7 +125,6 @@ export function ConversationsProvider({ children }: { children: React.ReactNode 
   );
 
   const deleteConversation = useCallback((id: string) => {
-    let nextId: string | null = null;
     let autoCreated: Conversation | null = null;
 
     setConversations((prev) => {

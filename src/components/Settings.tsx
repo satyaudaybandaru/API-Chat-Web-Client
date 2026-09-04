@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSettings } from "@/context/SettingsContext";
 import { detectVisionSupport } from "@/utils/api";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Eye, EyeOff, Zap, Image as ImageIcon, HelpCircle, CheckCircle, XCircle, AlertCircle } from "lucide-react";
 
-export function Settings({ onClose }: { onClose?: () => void }) {
+export function Settings() {
   const { settings, updateSettings, testConnection } = useSettings();
 
   const [baseUrl, setBaseUrl] = useState(settings.baseUrl);

@@ -1,4 +1,4 @@
-import type { Message, MessageImage, Settings } from "@/types";
+import type { Message, Settings } from "@/types";
 
 const VISION_YES = [
   /gpt-4o/i,

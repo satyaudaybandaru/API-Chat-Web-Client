@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { SettingsProvider, useSettings } from "./context/SettingsContext";
+import { useState } from "react";
+import { SettingsProvider } from "./context/SettingsContext";
 import { ConversationsProvider } from "./context/ConversationsContext";
 import { Settings } from "./components/Settings";
 import { Chat } from "./components/Chat";
@@ -8,7 +8,6 @@ import { Menu } from "lucide-react";
 import { Button } from "./components/ui/button";
 
 function AppContent() {
-  const { isConfigured } = useSettings();
   const [showSettings, setShowSettings] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 

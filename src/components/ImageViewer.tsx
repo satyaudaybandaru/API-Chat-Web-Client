@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 export function ImageViewer({ src, isOpen, onClose }: { src: string | null; isOpen: boolean; onClose: () => void }) {

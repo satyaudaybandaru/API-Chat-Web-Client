@@ -7,13 +7,13 @@ import { generateImage, generateVideo } from "@/utils/generationApi";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Send, Bot, User, ImageIcon, Settings as SettingsIcon, Zap, X, Film, PlusCircle, AlertCircle } from "lucide-react";
+import { Send, Bot, User, ImageIcon, Settings as SettingsIcon, Zap, X, Film, AlertCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ImageViewer } from "./ImageViewer";
 
 export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
-  const { settings, isConfigured, supportsVision, supportsImageGen, supportsVideoGen } = useSettings();
+  const { settings, isConfigured, supportsImageGen, supportsVideoGen } = useSettings();
   const { activeConversationId, getConversation, updateConversation, createConversation } = useConversations();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -102,11 +102,7 @@ export function Chat({ onOpenSettings }: { onOpenSettings: () => void }) {
     }
   };
 
-  const persistMessages = (newMessages: Message[]) => {
-    if (activeConversationId) {
-      updateConversation(activeConversationId, newMessages);
-    }
-  };
+
 
   async function handleSend() {
     if ((!input.trim() && pendingImages.length === 0) || !isConfigured) return;
