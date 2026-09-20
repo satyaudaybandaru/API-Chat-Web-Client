@@ -34,4 +34,5 @@ A modern, highly responsive, privacy-focused local web client for interacting wi
    ```
 4. Open the application in your browser and enter your API configuration in the Settings panel (via the gear icon) to start chatting!
 
-But you don't have to setup on your own!!! that's the main motive, check out the deployed link and use it right now in your browser!!!
+But you don't have to setup on your own!!! that's the main motive, check out the deployed link below and use it right now in your browser!!!
+[Go To API Chat Web Client](https://api-chat-web-client-rho.vercel.app/)
