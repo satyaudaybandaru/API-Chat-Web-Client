@@ -74,6 +74,9 @@ export function Settings() {
     });
     setTesting(false);
     setTestResult(result);
+    if (testResult){
+      handleSave()
+    }
   }
 
   return (
